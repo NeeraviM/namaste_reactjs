@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/NeeraviM/namaste_reactjs/issues"
   },
-  "homepage": "https://github.com/NeeraviM/namaste_reactjs#readme"
+  "homepage": "https://github.com/NeeraviM/namaste_reactjs#readme",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  }
 }
