@@ -1,0 +1,11 @@
+# Parcel
+ - Dev build
+ - creating local server
+ - HMR = hot module replacement
+ - File watching algo - written in c++
+ - caching - faster builds(.parcel-cache)
+ - image optimization
+ - minification
+ - bundling
+ - compress
+ - consistent hashing
