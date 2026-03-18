@@ -1,0 +1,25 @@
+{
+  "name": "ep_02",
+  "version": "1.0.0",
+  "description": "igniting our app session",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeeraviM/namaste_reactjs.git"
+  },
+  "keywords": [
+    "react",
+    "parcel",
+    "namaste",
+    "react"
+  ],
+  "author": "Neeravi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NeeraviM/namaste_reactjs/issues"
+  },
+  "homepage": "https://github.com/NeeraviM/namaste_reactjs#readme"
+}
