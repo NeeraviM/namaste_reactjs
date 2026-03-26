@@ -3,3 +3,15 @@
     font-weight: bold;
     /* font-size: 24px; */
 }
+.title{
+    color: blueviolet;
+    font-weight: bold;
+}
+
+p{
+    color: turquoise;
+    font-size: 28px;
+}
+.colortale{
+    color: teal;
+}
