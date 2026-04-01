@@ -1,0 +1,38 @@
+{
+  "name": "ep_02",
+  "version": "1.0.0",
+  "description": "igniting our app session",
+  "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeeraviM/namaste_reactjs.git"
+  },
+  "keywords": [
+    "react",
+    "parcel",
+    "namaste",
+    "react"
+  ],
+  "author": "Neeravi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NeeraviM/namaste_reactjs/issues"
+  },
+  "homepage": "https://github.com/NeeraviM/namaste_reactjs#readme",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "browserslist":[
+    "last 2 versions",
+    "last 2 Chrome versions",
+    "last 2 Firefox versions"
+  ]
+}
