@@ -36,7 +36,7 @@ const RestaurantMenu = () => {
   console.log("-----------------------------------");
   console.log(itemCards[0]?.card.info.name);
   return (
-    <div className="menu">
+    <div className="flex">
       <h1>{name}</h1>
       <p>
         {cuisines.join(", ")} - {costForTwoMessage}

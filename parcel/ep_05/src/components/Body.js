@@ -66,45 +66,47 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      {/* <div className="search">Search</div> */}
-      <div className="searchWidget">
-        <input
-          type="text"
-          name="search"
-          value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value);
-          }}
-        />
-        <button
-          onClick={(e) => {
-            console.log(listOfRestaurants);
-            let filteredData = listOfRestaurants.filter((val) => {
-              return val.info.name
-                .toLowerCase()
-                .includes(searchText.toLowerCase());
-            });
-            console.log(filteredData);
-            setFilteredRestaurants(filteredData);
-          }}
-        >
-          Search
-        </button>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            console.log("Button Clicked");
-            let rate = 4;
-            let filteredData = listOfRestaurants.filter((val) => {
-              return val.avgRating > 4.3;
-            });
-            setlistOfRestaurants(filteredData);
-            console.log(filteredData);
-          }}
-          // onMouseOver={()=>{console.log("Button Hovered")}}
-        >
-          Top Restaurants
-        </button>
+      <div className="flex justify-between">
+        <div className="m-2 p-2">
+          <input
+            type="text"
+            name="search"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+           className="rounded-lg border-blue-300 outline-1 m-2 p-2"/>
+          <button className="m-2 p-2 bg-green-100 border-amber-200 rounded-xl"
+            onClick={(e) => {
+              console.log(listOfRestaurants);
+              let filteredData = listOfRestaurants.filter((val) => {
+                return val.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase());
+              });
+              console.log(filteredData);
+              setFilteredRestaurants(filteredData);
+            }}
+          >
+            Search
+          </button>
+          <button
+            className="m-2 p-2 bg-violet-300 rounded-xl"
+            onClick={() => {
+              console.log("Button Clicked");
+              let rate = 4;
+              let filteredData = listOfRestaurants.filter((val) => {
+                return val.avgRating > 4.3;
+              });
+              setlistOfRestaurants(filteredData);
+              console.log(filteredData);
+            }}
+            // onMouseOver={()=>{console.log("Button Hovered")}}
+          >
+            Top Restaurants
+          </button>
+        </div>
+        
       </div>
 
       {/* <button>Check let vs state</button>
@@ -118,7 +120,7 @@ const Body = () => {
       >
         {st}
       </button> */}
-      <div className="restro-container">
+      <div className="flex flex-wrap m-2 gap-1">
         {filteredRestaurants.map((restaurant) => (
           <Link
             to={"/restaurants/" + restaurant.info.id}

@@ -13,20 +13,15 @@ const RestroCard = ({ resData }) => {
   // console.log(resData);
   return (
     <div
-      className="res-card"
-      style={{
-        color: "#0b5e50",
-        backgroundColor: "#e7efd6",
-        margin: "9px 3px",
-      }}
+      className="m-1.5 p-4 w-58 h-122 bg-violet-100 rounded-xl hover:bg-violet-50"
     >
       <img className="rescard" src={CDN_URL + cloudinaryImageId} />
       <div>
-        <h3 className="margin-tb-2">{name}</h3>
-        <h5 className="margin-tb-2">{cuisines.join(", ")}</h5>
-        <h5 className="margin-tb-2">{avgRatingString}</h5>
-        <h5 className="margin-tb-2">{costForTwo}</h5>
-        <h5 className="margin-tb-2">{sla.slaString}</h5>
+        <h3 className="font-bold py-3 text-lg h-20">{name}</h3>
+        <h5 className="font-light text-cyan-950">{cuisines.join(", ")}</h5>
+        <h5 className="font-light">{avgRatingString}</h5>
+        <h5 className="font-light">{costForTwo}</h5>
+        <h5 className="font-light">{sla.slaString}</h5>
       </div>
     </div>
   );

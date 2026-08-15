@@ -14,26 +14,29 @@ const Header = () => {
 
   return (
     <div>
-      <div className="header">
-        <div className="logo-container">
-          <img className="logo" src={LOGO_URL} />
+      <div className="flex justify-between shadow-lg mb-2 bg-pink-100">
+        <div>
+          <img className="h-25 w-25" src={LOGO_URL} />
         </div>
-        <div className="nav-items">
-          <ul>
-            <li>
+        <div className="flex items-center">
+          <ul className="flex p-4 m-4">
+            <li className="px-4">
+              <OnlineStatus/>
+            </li>
+            <li className="px-4">
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li className="px-4">
               <Link to="/about">About</Link>
             </li>
-            <li>
+            <li className="px-4">
               <Link to="/contact">Contact Us</Link>
             </li>
-            <li>
+            <li className="px-4">
               <Link to="/grocery">Grocery</Link>
             </li>
             <li>Cart</li>
-            <li>
+            <li className="px-4">
               <button
                 className="loginButton"
                 onClick={(e) => {
@@ -56,7 +59,7 @@ const Header = () => {
         </div>
       </div>
       <div>
-        <OnlineStatus />
+        
       </div>
     </div>
   );
