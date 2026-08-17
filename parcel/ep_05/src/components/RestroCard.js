@@ -12,9 +12,7 @@ const RestroCard = ({ resData }) => {
   } = resData;
   // console.log(resData);
   return (
-    <div
-      className="m-1.5 p-4 w-58 h-122 bg-violet-100 rounded-xl hover:bg-violet-50"
-    >
+    <div className="m-1.5 p-4 w-58 h-122 bg-violet-100 rounded-xl hover:bg-violet-50">
       <img className="rescard" src={CDN_URL + cloudinaryImageId} />
       <div>
         <h3 className="font-bold py-3 text-lg h-20">{name}</h3>
@@ -25,6 +23,23 @@ const RestroCard = ({ resData }) => {
       </div>
     </div>
   );
+};
+
+export const withPromotionLabel = (RestroCard) => {
+  return (props) => {
+    return (
+      <div className="relative">
+        <label className="absolute bg-black text-white m-2 p-3 rounded-lg">
+          {props.resData.aggregatedDiscountInfoV3.subHeader
+            ? props.resData.aggregatedDiscountInfoV3.header +
+              " " +
+              props.resData.aggregatedDiscountInfoV3.subHeader
+            : props.resData.aggregatedDiscountInfoV3.header}
+        </label>
+        <RestroCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestroCard;

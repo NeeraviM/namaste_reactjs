@@ -1,4 +1,4 @@
-import RestroCard from "./RestroCard";
+import RestroCard, { withPromotionLabel } from "./RestroCard";
 import restaurants from "../utils/mockData";
 import Shimmer from "./Shimmer";
 import { useEffect, useState } from "react";
@@ -28,8 +28,9 @@ const Body = () => {
   const onlineStatus = useOnlineStatus();
   //data.cards[1].card.card.gridElements.infoWithStyle.restaurants[0].info
   // fetch Data
-  //https://corsproxy.io/
-  //"https://corsproxy.io/"+"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.97530&lng=77.59100&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING",
+  
+  const RestroCardPromoted = withPromotionLabel(RestroCard);
+
   const fetchData = async () => {
     const data = await fetch(
       "https://corsproxy.io/" +
@@ -75,8 +76,10 @@ const Body = () => {
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
-           className="rounded-lg border-blue-300 outline-1 m-2 p-2"/>
-          <button className="m-2 p-2 bg-green-100 border-amber-200 rounded-xl"
+            className="rounded-lg border-blue-300 outline-1 m-2 p-2"
+          />
+          <button
+            className="m-2 p-2 bg-green-100 border-amber-200 rounded-xl"
             onClick={(e) => {
               console.log(listOfRestaurants);
               let filteredData = listOfRestaurants.filter((val) => {
@@ -106,7 +109,6 @@ const Body = () => {
             Top Restaurants
           </button>
         </div>
-        
       </div>
 
       {/* <button>Check let vs state</button>
@@ -126,7 +128,8 @@ const Body = () => {
             to={"/restaurants/" + restaurant.info.id}
             key={restaurant.info.id}
           >
-            <RestroCard resData={restaurant.info} />
+            {restaurant.info?.aggregatedDiscountInfoV3?.header ?( <RestroCardPromoted resData={restaurant.info} />):
+            (<RestroCard resData={restaurant.info} />)}
           </Link>
           // <RestroCard key={restaurant.id} {...restaurant}/>
         ))}
