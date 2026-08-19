@@ -22,9 +22,9 @@ const CatItemList = ({ items }) => {
           </div>
           <div className="w-3/12 p-4">
             <div className="absolute ">
-                <button className="p-2 bg-white shadow-lg m-auto cursor-pointer">Add +</button>
+                <button className=" p-2 mx-16 bg-white text-gray-700 shadow-lg m-auto cursor-pointer">Add +</button>
             </div>
-            <img src={CDN_URL + item.card.info.imageId} className="w-full"/>
+            <img src={CDN_URL + item.card.info.imageId} className="w-[150] h-[150]"/>
           </div>
         </div>
       ))}
