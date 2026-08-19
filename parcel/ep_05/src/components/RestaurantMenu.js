@@ -8,9 +8,8 @@ const RestaurantMenu = () => {
   // const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
   console.log(resId);
-
   const resInfo = useRestaurantMenu(resId);
-  
+
   // useEffect(() => {
   //   console.log("useEffect");
   //   fetchMenu();
@@ -31,14 +30,19 @@ const RestaurantMenu = () => {
   const { itemCards } =
     resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
   console.log(resInfo?.cards[5].groupedCard);
-  console.log("-----------------------------------");
-  console.log(itemCards);
-  console.log("-----------------------------------");
-  console.log(itemCards[0]?.card.info.name);
+  const itemCategories =
+    resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => {
+      return (
+        c.card?.card["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+      );
+    });
+    console.clear();
+    console.log(itemCategories);
   return (
-    <div className="flex">
-      <h1>{name}</h1>
-      <p>
+    <div className="text-center">
+      <h1 className="font-bold my-6 text-2xl">{name}</h1>
+      <p className="font-bold text-lg">
         {cuisines.join(", ")} - {costForTwoMessage}
       </p>
       <ul>
