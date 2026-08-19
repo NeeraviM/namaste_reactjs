@@ -3,6 +3,7 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 // import { MENU_UPI_URL } from "../utils/constants";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   // const [resInfo, setResInfo] = useState(null);
@@ -37,7 +38,7 @@ const RestaurantMenu = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
       );
     });
-    console.clear();
+    // console.clear();
     console.log(itemCategories);
   return (
     <div className="text-center">
@@ -45,7 +46,7 @@ const RestaurantMenu = () => {
       <p className="font-bold text-lg">
         {cuisines.join(", ")} - {costForTwoMessage}
       </p>
-      <ul>
+      {/* <ul>
         {itemCards.map((item, index) => (
           <li key={index}>
             {item.card.info.name} - Rs.
@@ -54,7 +55,11 @@ const RestaurantMenu = () => {
               : item.card.info.defaultPrice) / 100}
           </li>
         ))}
-      </ul>
+      </ul> */}
+      {/* categories accordians */}
+      {itemCategories.map((category)=>
+        <RestaurantCategory key={category?.card?.card?.categoryId} data = {category?.card?.card}/>
+      )}
     </div>
   );
 };
