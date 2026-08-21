@@ -7,6 +7,7 @@ import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   // const [resInfo, setResInfo] = useState(null);
+  const [showIndex,setShowIndex] = useState(-1);
   const { resId } = useParams();
   console.log(resId);
   const resInfo = useRestaurantMenu(resId);
@@ -38,8 +39,8 @@ const RestaurantMenu = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
       );
     });
-    // console.clear();
-    console.log(itemCategories);
+  // console.clear();
+  console.log(itemCategories);
   return (
     <div className="text-center">
       <h1 className="font-bold my-6 text-2xl">{name}</h1>
@@ -57,9 +58,14 @@ const RestaurantMenu = () => {
         ))}
       </ul> */}
       {/* categories accordians */}
-      {itemCategories.map((category)=>
-        <RestaurantCategory key={category?.card?.card?.categoryId} data = {category?.card?.card}/>
-      )}
+      {itemCategories.map((category,index) => (
+        <RestaurantCategory
+          key={category?.card?.card?.categoryId}
+          data={category?.card?.card}
+          showItems = {(index === showIndex) ? true :false}
+          setShowIndex = {()=> setShowIndex(index)}
+        />
+      ))}
     </div>
   );
 };
